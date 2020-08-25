@@ -1,14 +1,14 @@
-import java.io.*;
+ï»¿import java.io.*;
 
-public class Task7 {
+public class Test {
 
     public static void main(String[] args) throws IOException {
 
-        String str = "ïðîãðàììèñò";
+        String str = "Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð¸ÑÑ‚";
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.print("Ââåäèòå êîëè÷åñòâî ïðîãðàììèñòîâ: ");
+        System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð¸ÑÑ‚Ð¾Ð²: ");
 
         int programmers = Integer.parseInt(reader.readLine());
 
@@ -19,13 +19,13 @@ public class Task7 {
         } else if((programmers % 10 >= 2 && programmers % 10 <= 4)
                     && !(programmers % 100 >= 12 && programmers % 100 <= 14)) {
 
-            System.out.println(programmers + " " + str + "à");
+            System.out.println(programmers + " " + str + "Ð°");
 
         } else if((programmers % 10 >= 5 && programmers % 10 <= 9)
                     || (programmers % 100 >= 11 && programmers % 100 <= 19)
                     || programmers % 10 == 0) {
 
-            System.out.println(programmers + " " + str + "îâ");
+            System.out.println(programmers + " " + str + "Ð¾Ð²");
 
         }
 
