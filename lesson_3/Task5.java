@@ -1,9 +1,9 @@
-public class Task5 {
+ï»¿public class Task5 {
 
     public static void main(String[] args) {
 
         for(int i = 1; i <= 20; i++) {
-            System.out.printf("%2d äþéì = %.2f ñì\n", i, i * 2.54);
+            System.out.printf("%2d ï¿½ï¿½ï¿½ï¿½ = %.2f ï¿½ï¿½\n", i, i * 2.54);
         }
     }
 }
