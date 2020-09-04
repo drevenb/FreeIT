@@ -24,18 +24,21 @@ public class Task16_met {
 
         if(minIndex > maxIndex) {
 
-            int temp = minIndex;
-            minIndex = maxIndex;
-            maxIndex = temp;
-        }
+            for(int i = maxIndex; i <= minIndex; i++) {
 
-        for(; minIndex <= maxIndex; minIndex++) {
+                sum += array[i];
+            }
+        } else if(minIndex < maxIndex) {
 
-            sum += array[minIndex];
+            for(int i = minIndex; i <= maxIndex; i++) {
+
+                sum += array[i];
+            }
         }
 
         System.out.println(Arrays.toString(array));
 
-        System.out.println(sum);
+        System.out.println("Sum elements between the smallest(" + array[minIndex] +
+                            ") and the greatest(" + array[maxIndex] + ") numbers = " + sum);
     }
 }
