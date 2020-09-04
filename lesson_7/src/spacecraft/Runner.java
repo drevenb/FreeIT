@@ -6,5 +6,7 @@ public class Runner {
         SpacePort spacePort = new SpacePort();
 
         spacePort.launch(new Shuttle());
+        spacePort.launch(new SpaceX());
+        spacePort.launch(new UFO());
     }
 }

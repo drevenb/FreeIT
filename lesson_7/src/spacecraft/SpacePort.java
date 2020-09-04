@@ -2,13 +2,13 @@ package spacecraft;
 
 public class SpacePort {
 
-    public void launch(IStart shuttle) {
+    public void launch(IStart spaceCraft) {
 
-        if(!shuttle.preStartCheck()) {
+        if(!spaceCraft.preStartCheck()) {
             System.out.println("Prelaunch check failed!");
         } else {
 
-            shuttle.startEngine();
+            spaceCraft.startEngine();
 
             for(int i = 10; i > 0; i--) {
                 System.out.println(i);
@@ -20,7 +20,7 @@ public class SpacePort {
                 }
             }
 
-            shuttle.start();
+            spaceCraft.start();
         }
     }
 }
