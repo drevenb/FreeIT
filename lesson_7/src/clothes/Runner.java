@@ -1,5 +1,9 @@
 package clothes;
 
+import clothes.jackets.*;
+import clothes.pants.*;
+import clothes.shoes.*;
+
 public class Runner {
     public static void main(String[] args) {
 

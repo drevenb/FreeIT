@@ -1,5 +1,9 @@
 ﻿package robot;
 
+import robot.heads.*;
+import robot.hands.*;
+import robot.legs.*;
+
 public class Run {
     public static void main(String[] args) {
         /*
