@@ -1,46 +1,43 @@
-import java.util.*;
-
 public class Task21_met {
     public static void main(String[] args) {
 
-        stringTest("hello");
-        stringBuilderTest(new StringBuilder("hello"));
-        stringBufferTest(new StringBuffer("hello"));
-    }
+        String str = "hello";
+        StringBuilder strBuilder = new StringBuilder("hello");
+        StringBuffer strBuffer = new StringBuffer("hello");
 
-    public static void stringTest(String str) {
-        long startTime = System.currentTimeMillis();
-
-        for(int i = 0; i < 25; i++) {
+        long startTime = System.nanoTime();
+        for(int i = 0; i < 20; i++) {
             str += str;
         }
+        long endTime = System.nanoTime();
+        long stringTime = endTime - startTime;
+        System.out.println("String concatenation = " + stringTime + " nanoseconds.");
 
-        long endTime = System.currentTimeMillis();
-
-        System.out.println("String concatenation = " + (endTime - startTime));
-    }
-
-    public static void stringBuilderTest(StringBuilder str) {
-        long startTime = System.currentTimeMillis();
-
-        for(int i = 0; i < 25; i++) {
-            str.append(str);
+        startTime = System.nanoTime();
+        for(int i = 0; i < 20; i++) {
+            strBuilder.append(strBuilder);
         }
+        endTime = System.nanoTime();
+        long builderTime = endTime - startTime;
+        System.out.println("StringBuilder = " + builderTime + " nanoseconds.");
 
-        long endTime = System.currentTimeMillis();
-
-        System.out.println("StringBuilder = " + (endTime - startTime));
-    }
-
-     public static void stringBufferTest(StringBuffer str) {
-        long startTime = System.currentTimeMillis();
-
-        for(int i = 0; i < 25; i++) {
-            str.append(str);
+        startTime = System.nanoTime();
+        for(int i = 0; i < 20; i++) {
+            strBuffer.append(strBuffer);
         }
+        endTime = System.nanoTime();
+        long bufferTime = endTime - startTime;
+        System.out.println("StringBuffer = " + bufferTime + " nanoseconds.");
 
-        long endTime = System.currentTimeMillis();
+        long mostEfficient = stringTime > builderTime ? builderTime : stringTime;
+        mostEfficient = mostEfficient > bufferTime ? bufferTime : mostEfficient;
 
-        System.out.println("StringBuffer = " + (endTime - startTime));
+        if(mostEfficient == stringTime) {
+            System.out.println("String is the most efficient.");
+        } else if(mostEfficient == builderTime) {
+            System.out.println("StringBuilder is the most efficient.");
+        } else if(mostEfficient == bufferTime) {
+            System.out.println("StringBuffer is the most efficient.");
+        }
     }
 }
