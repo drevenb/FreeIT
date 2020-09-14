@@ -73,8 +73,19 @@ public class ATM {
             if(count20 > 0) {
                 System.out.println("You got " + count20 + " bills of 20$");
             }
-        } else if(money > 0 || money < 0) {
+        } else if(money > 0 && money < 20) {
             System.out.println("The operation was unsuccessful");
+            System.out.println("There are no such bills in the ATM.");
+            System.out.println("There are only bills of 100, 50, 20 USD.");
+            return false;
+        } else if(money > 0 && bill100 == 0 && bill50 == 0 && bill20 == 0) {
+            System.out.println("The operation was unsuccessful");
+            System.out.println("Not enough money in the ATM.");
+            return false;
+        } else if(money < 0) {
+            System.out.println("The operation was unsuccessful");
+            System.out.println("Something went wrong.");
+            System.out.println("Call to the technical support.");
             return false;
         }
 
