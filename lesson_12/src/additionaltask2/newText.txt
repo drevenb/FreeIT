@@ -1,0 +1,2 @@
+This is a text.
+It contains palindromes as civic, noon, mom etc.
