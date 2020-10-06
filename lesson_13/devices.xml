@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<tns:devices
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="schema.xsd "
+        xmlns:tns="schema.xsd">
+
+    <device deviceID="a5324">
+        <name>Keyboard</name>
+        <origin>Great Britain</origin>
+        <price currency="USD">20</price>
+        <type>
+            <peripheral>true</peripheral>
+            <consumption>1</consumption>
+            <cooler>false</cooler>
+            <group>IODevice</group>
+            <port>USB</port>
+        </type>
+        <critical>false</critical>
+    </device>
+
+    <device deviceID="e3918">
+        <name>Processor</name>
+        <origin>New Zealand</origin>
+        <price currency="USD">150</price>
+        <type>
+            <peripheral>false</peripheral>
+            <consumption>75</consumption>
+            <cooler>true</cooler>
+            <group>Multimedia</group>
+            <port>AM2</port>
+        </type>
+        <critical> true </critical>
+    </device>
+
+    <device deviceID="f192">
+        <name>Screen</name>
+        <origin>Poland</origin>
+        <price currency="USD">250</price>
+        <type>
+            <peripheral>true</peripheral>
+            <consumption>50</consumption>
+            <cooler>false</cooler>
+            <group>IODevice</group>
+            <port>HDMI</port>
+        </type>
+        <critical>false</critical>
+    </device>
+</tns:devices>
