@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="schema.xsd"
+        xmlns:tns="schema.xsd">
+    <xsd:element name="devices" type="tns:devices"/>
+    <xsd:complexType name="devices">
+        <xsd:sequence>
+            <xsd:element name="device"
+                    type="tns:device"
+                    maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="device">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="origin" type="xsd:string"/>
+            <xsd:element name="price" type="tns:price"/>
+            <xsd:element name="type" type="tns:type"/>
+            <xsd:element name="critical" type="xsd:boolean"/>
+        </xsd:sequence>
+        <xsd:attribute name="deviceID" type="tns:deviceID" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="price">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:positiveInteger">
+                <xsd:attribute name="currency" default="USD">
+                    <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="USD"/>
+                            <xsd:enumeration value="EUR"/>
+                            <xsd:enumeration value="BYN"/>
+                        </xsd:restriction>
+                    </xsd:simpleType>
+                </xsd:attribute>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="type">
+        <xsd:all>
+            <xsd:element name="peripheral" type="xsd:boolean"/>
+            <xsd:element name="cooler" type="xsd:boolean"/>
+            <xsd:element name="consumption" type="xsd:positiveInteger"/>
+            <xsd:element name="group">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="IODevice"/>
+                        <xsd:enumeration value="Multimedia"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="port">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="AM2"/>
+                        <xsd:enumeration value="USB"/>
+                        <xsd:enumeration value="COM"/>
+                        <xsd:enumeration value="PCI"/>
+                        <xsd:enumeration value="SATA"/>
+                        <xsd:enumeration value="DVI"/>
+                        <xsd:enumeration value="VGA"/>
+                        <xsd:enumeration value="HDMI"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:simpleType name="deviceID">
+        <xsd:restriction base="xsd:ID">
+            <xsd:pattern value="[a-zA-Z][0-9]{1,5}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
