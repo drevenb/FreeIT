@@ -6,13 +6,13 @@ public class TextFormatter {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src\\additionaltask2\\text.txt"));
         BufferedWriter writer = new BufferedWriter(new FileWriter("src\\additionaltask2\\newText.txt"));
-        String text = "";
+        StringBuilder text = new StringBuilder();
 
         while(reader.ready()) {
-            text += reader.readLine();
+            text.append(reader.readLine());
         }
 
-        String[] arrayOfSentences = text.trim().split("[.!?]+");
+        String[] arrayOfSentences = text.toString().trim().split("[.!?]+");
 
         for(String str: arrayOfSentences) {
             if((TextFormatter.getNumberOfWords(str) >= 3 && TextFormatter.getNumberOfWords(str) <= 5) ||

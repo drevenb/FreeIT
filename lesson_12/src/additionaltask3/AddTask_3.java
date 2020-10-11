@@ -8,13 +8,13 @@ public class AddTask_3 {
         BufferedReader readBadWords = new BufferedReader(new FileReader("src\\additionaltask3\\ForbiddenWords.txt"));
         BufferedReader readText = new BufferedReader(new FileReader("src\\additionaltask3\\text.txt"));
 
-        String text = "";
+        StringBuilder text = new StringBuilder();
 
         while(readText.ready()) {
-            text += readText.readLine();
+            text.append(readText.readLine());
         }
 
-        String[] arrayOfSentences = text.trim().split("\\.+");
+        String[] arrayOfSentences = text.toString().trim().split("\\.+");
         List<String> listOfBadWords = new ArrayList();
         List<String> listOfBadSentences = new ArrayList();
 

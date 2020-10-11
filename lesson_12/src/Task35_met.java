@@ -1,3 +1,5 @@
+package freeit.lesson_12;
+
 import java.io.*;
 
 public class Task35_met {

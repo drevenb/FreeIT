@@ -1,3 +1,5 @@
+package freeit.lesson_12;
+
 import java.io.File;
 
 public class Task36_met {

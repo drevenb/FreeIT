@@ -1,3 +1,5 @@
+package freeit.lesson_12;
+
 import java.io.*;
 import java.util.*;
 
@@ -5,14 +7,15 @@ public class Task34_met {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("\\src\\file2.txt"));
 
-        List<Integer> list = new ArrayList();
-        String line, text = "", regex = "\\D+";
+        List<Integer> list = new ArrayList<>();
+        StringBuilder text = new StringBuilder();
+        String regex = "\\D+";
 
-        while((line = reader.readLine()) != null) {
-            text += line;
+        while(reader.ready()) {
+            text.append(reader.readLine());
         }
 
-        String[] arrayOfStrings = text.trim().split(regex);
+        String[] arrayOfStrings = text.toString().trim().split(regex);
 
         for(int i = 0; i < arrayOfStrings.length; i++) {
             if(isNumber(arrayOfStrings[i])) {

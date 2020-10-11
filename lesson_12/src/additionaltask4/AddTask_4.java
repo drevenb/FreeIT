@@ -12,10 +12,8 @@ public class AddTask_4 {
 
         try{
             fos = new FileOutputStream(file);
-            if(fos != null) {
-                oos = new ObjectOutputStream(fos);
-                oos.writeObject(car);
-            }
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(car);
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch(IOException e) {
@@ -35,11 +33,8 @@ public class AddTask_4 {
 
         try {
             fis = new FileInputStream(file);
-
-            if(fis != null) {
-                ois = new ObjectInputStream(fis);
-                copyOfCar = (Car) ois.readObject();
-            }
+            ois = new ObjectInputStream(fis);
+            copyOfCar = (Car) ois.readObject();
         } catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch(IOException e) {
