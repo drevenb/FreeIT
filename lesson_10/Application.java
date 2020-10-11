@@ -151,6 +151,7 @@ public class Application {
                 for (Book book : library.getBooks()) {
                     if (book.getID() == id) {
                         isBookExist = true;
+                        break;
                     }
                 }
 

@@ -1,9 +1,6 @@
 package lesson_10;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Task30_met {
     public static void main(String[] args) {
@@ -19,7 +16,7 @@ public class Task30_met {
             System.out.print(num + " ");
         }
 
-        Set<Integer> set = new HashSet<>(list);
+        LinkedHashSet<Integer> set = new LinkedHashSet<>(list);
 
         System.out.println("\nOur list without repeats: ");
         for(Integer num: set) {

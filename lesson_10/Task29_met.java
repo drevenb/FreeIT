@@ -19,7 +19,7 @@ public class Task29_met {
         System.out.println();
         for(int i = 0; i < list.size(); i++) {
             if(list.get(i) < 4) {
-                list.remove(i);
+                list.remove(i--);
             }
         }
 
